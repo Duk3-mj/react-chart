@@ -1,26 +1,32 @@
-import React from 'react';
+import React, { Fragment, FunctionComponentFactory, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Chart from "./chart"
+import Navbar from './navbar';
+import Showchart from './Showchart';
 
-function App() {
+function App(): JSX.Element{
+
+  const [chart ,getChart] = useState<string>("Pie");
+  const selectChart = (value: string):void => {
+        getChart(value);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <Fragment>
+    <div>
+    <Navbar
+      setChart = {selectChart}
+    ></Navbar>
     </div>
-  );
+    
+  < div>
+    <Showchart 
+      chartSelected = {chart}
+    />
+  </div>
+  </Fragment>
+    
+  ); 
 }
 
 export default App;
