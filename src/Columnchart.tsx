@@ -6,15 +6,15 @@ interface IOptions{
 
 }
 
-export default class LineChart extends PureComponent {
+export default class ColumnChart extends PureComponent {
   instance:any;
 
   options:IOptions = {
     chart: {
-      type: "line"
+      type: "column"
     },
     title: {
-      text: "Line Chart"
+      text: "Column Chart"
     },
     series: [{
         name: 'Players',

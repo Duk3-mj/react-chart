@@ -20,9 +20,7 @@ function App(): JSX.Element{
     </div>
     
   < div>
-    <Showchart 
-      chartSelected = {chart}
-    />
+    {chart&&<Showchart chartSelected = {chart}/>}
   </div>
   </Fragment>
     

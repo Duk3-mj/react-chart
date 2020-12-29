@@ -33,8 +33,8 @@ return(
                 <li onClick = {() => handleClick("Area")}>
                     Area
                 </li>
-                <li onClick = {() => handleClick("Bubble")}>
-                    Bubble
+                <li onClick = {() => handleClick("Column")}>
+                    Column
                 </li>
             </ul>
             <div className="burger">

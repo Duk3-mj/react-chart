@@ -1,7 +1,7 @@
 import react, { Fragment } from 'react'
 import AreaChart from './AreaChart';
 import BarChart from './BarChart';
-import Bubblechart from './Bubblechart';
+import Columnchart from './Columnchart';
 import PieChart from './chart';
 import LineChart from './LineChart';
 
@@ -21,8 +21,8 @@ const handleChart = () => {
             return <LineChart></LineChart>
         case "Area":
             return <AreaChart></AreaChart>
-        case "Bubble":
-            return <Bubblechart></Bubblechart>
+        case "Column":
+            return <Columnchart></Columnchart>
     }
 }
 return(
