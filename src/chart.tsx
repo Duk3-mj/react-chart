@@ -63,7 +63,7 @@ export default class PieChart extends PureComponent {
   render() {
     return (
       <div>
-        <div id="dummy-id" />
+        <div id="dummy-id"/>
       </div>
     );
   }

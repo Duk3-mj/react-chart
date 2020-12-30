@@ -1,27 +1,43 @@
 import React, { Fragment, FunctionComponentFactory, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Chart from "./chart"
-import Navbar from './navbar';
+import SideDrawer from "./Components/SideDrawer/Sidedrawer"
 import Showchart from './Showchart';
+import Toolbar from './Components/Toolbar/Toolbar';
 
 function App(): JSX.Element{
-
+  
+  const [isSideDrawer, setIsSideDrawer] = useState<boolean>(false);
+  let sideDrawer:JSX.Element
   const [chart ,getChart] = useState<string>("Pie");
   const selectChart = (value: string):void => {
         getChart(value);
   }
+
+  const sideDrawerHandle = () =>{
+    setIsSideDrawer(!isSideDrawer);
+    console.log("hi i am here" +isSideDrawer )
+    
+  }
   return (
   <Fragment>
-    <div>
-    <Navbar
+    <Toolbar
+    setChart = {selectChart}
+    show = {sideDrawerHandle}
+    ></Toolbar>
+    <div className="container">
+    <div className="sideDrawer">
+    {isSideDrawer&&<SideDrawer 
       setChart = {selectChart}
-    ></Navbar>
-    </div>
-    
-  < div>
+      ></SideDrawer>}
+    </div>    
+    < div className ="chart">
     {chart&&<Showchart chartSelected = {chart}/>}
   </div>
+    </div>
+    
+  
+  
+    
   </Fragment>
     
   ); 

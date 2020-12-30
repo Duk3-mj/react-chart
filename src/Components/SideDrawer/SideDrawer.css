@@ -1,0 +1,19 @@
+.nav-links-sideDrawer{
+    left:0;
+    height: 92vh;
+    width: 200px;
+    background-color: grey;
+    color: whitesmoke;
+    }
+
+.nav-links-sideDrawer ul {
+    display: flex;
+    align-items: center;
+  flex-direction: column;
+  align-items: center;
+   align-content: space-between;
+}
+
+.nav-links-sideDrawer li {
+    margin: 1rem 4.5rem ;
+}
